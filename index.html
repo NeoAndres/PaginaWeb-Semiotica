@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calcu-Metro | Tarifas 2026</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <header>
+    <div
+      style="display:flex; justify-content:flex-end; align-items:center; gap:15px; padding:12px 20px; background:#002b18;">
+      <ul class="nav-linkss">
+        <li>
+          <a href="landing.html">Inicio</a>
+        </li>
+
+        <li>
+          <a href="index.html">Calculadora</a>
+        </li>
+      </ul>
+
+
+      <select id="tamano" onchange="cambiarTamano()">
+        <option value="16" selected>Tamaño</option>
+        <option value="14">Pequeño</option>
+        <option value="16">Normal</option>
+        <option value="20">Grande</option>
+        <option value="24">Muy grande</option>
+      </select>
+      <button class="dark-toggle" id="darkToggle" onclick="toggleDark()"
+        style="background:rgba(255,255,255,0.15); border:2px solid rgba(255,255,255,0.4); color:white; border-radius:50px; padding:6px 14px; font-size:1rem; cursor:pointer;">
+        Oscuro
+      </button>
+    </div>
+
+  </header>
+
+
+  <div class="container">
+
+    <div class="banner banner1"></div>
+
+    <div class="main">
+      <h1>Calcu-Metro</h1>
+
+      <div class="card">
+        <label>Tipo de Usuario</label>
+        <select id="tipoUsuario">
+          <option value="Frecuente">Frecuente</option>
+          <option value="Adulto Mayor">Adulto Mayor</option>
+          <option value="Estudiantil" selected>Estudiantil</option>
+          <option value="PcD">Persona con Discapacidad (PcD)</option>
+          <option value="Portador">Portador</option>
+        </select>
+
+        <div class="grid">
+
+          <div>
+            <div class="section-title">Tarifas Metro 2026</div>
+            <div class="radio-box">
+              <table class="tabla-tarifas">
+                <thead>
+                  <tr>
+                    <th>Integración</th>
+                    <th>Frecuente</th>
+                    <th>Adulto Mayor</th>
+                    <th>Estudiantil</th>
+                    <th>PcD</th>
+                    <th>Portador</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1 - 4</td>
+                    <td>$3.820</td>
+                    <td>$3.330</td>
+                    <td>$1.600</td>
+                    <td>$2.720</td>
+                    <td>$4.400</td>
+                  </tr>
+                  <tr>
+                    <td>5 - 7</td>
+                    <td>$4.570</td>
+                    <td>$4.080</td>
+                    <td>$2.350</td>
+                    <td>$3.470</td>
+                    <td>$5.150</td>
+                  </tr>
+                  <tr>
+                    <td>8</td>
+                    <td>$5.320</td>
+                    <td>$4.830</td>
+                    <td>$3.100</td>
+                    <td>$4.220</td>
+                    <td>$5.900</td>
+                  </tr>
+                  <tr>
+                    <td>9 o más</td>
+                    <td>$6.070</td>
+                    <td>$5.580</td>
+                    <td>$3.850</td>
+                    <td>$4.970</td>
+                    <td>$6.650</td>
+                  </tr>
+                </tbody>
+              </table>
+
+
+            </div>
+          </div>
+
+          <!-- CALENDARIO -->
+          <div>
+            <div class="section-title">Calendario de Viaje</div>
+
+            <div class="calendar">
+
+              <label>Fecha Inicial</label>
+              <input type="date" id="fechaInicio">
+
+              <br><br>
+
+              <label>Fecha Final</label>
+              <input type="date" id="fechaFin">
+
+              <br><br>
+
+              <p>
+                Días seleccionados:
+                <span id="diasSeleccionados">0</span>
+              </p>
+
+              <label>Viajes por día</label>
+              <input type="number" id="viajesDia" min="1" value="2">
+
+            </div>
+          </div>
+
+        </div>
+
+        <div class="btn-area">
+          <button id="calcular">
+            CALCULAR
+          </button>
+        </div>
+
+        <div id="resultado"></div>
+
+        <div id="tip" class="tip-box"></div>
+
+      </div>
+
+    </div>
+
+    <div class="banner banner2"></div>
+
+  </div>
+
+  <script src="script.js"></script>
